@@ -3,6 +3,7 @@ import React, {Component} from 'react';
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Platet from "./Components/Platet";
 import People from "./Components/People";
+import Button from '@material-ui/core/Button';
 
 
 const routes = [
@@ -36,6 +37,9 @@ class App extends Component {
             <div className="App">
                 <Router>
                     <div>
+                        <Button variant="contained" color="primary">
+                            Hello World
+                        </Button>
                         <ul>
                             <li>
                                 <Link to="/planet">Planet</Link>
