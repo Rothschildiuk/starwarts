@@ -1,14 +1,14 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import {GlobalContext} from "../App";
+
 
 const PlotView = () => {
+    const value = useContext(GlobalContext)
 
-    return <div className='PlotView'>
-        PlotView
-
-
-
-
+    return <div>
+        <h1>{value}</h1>
     </div>
+
 
 }
 

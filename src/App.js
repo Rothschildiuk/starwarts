@@ -3,15 +3,21 @@ import PlotView from './Components/PlotView'
 import WorkingArea from './Components/WorkingArea'
 
 
-const App = () => {
-    // const EntityContext = React.createContext(55)
 
-    return <div className='App'>
-        <WorkingArea/>
-        <PlotView/>
-    </div>
+export const GlobalContext = React.createContext();
+
+
+const App = () => {
+
+
+    return <GlobalContext.Provider value={42}>
+        <div className='App'>
+            <WorkingArea/>
+            <PlotView/>
+        </div>
+    </GlobalContext.Provider>
+
 
 }
-
 
 export default App
