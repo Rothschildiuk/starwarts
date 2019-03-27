@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import RequestUtil from "../api/RequestUtil";
 
-class Platet extends Component {
+class Planet extends Component {
     state = {
         planetsList: []
 
@@ -26,4 +26,4 @@ class Platet extends Component {
     }
 }
 
-export default Platet;
+export default Planet;

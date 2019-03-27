@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Platet from "./Components/Platet";
+import Planet from "./Components/Planet";
 import People from "./Components/People";
 import Button from '@material-ui/core/Button';
 
@@ -9,7 +9,7 @@ import Button from '@material-ui/core/Button';
 const routes = [
     {
         path: "/planet",
-        component: Platet
+        component: Planet
     },
     {
         path: "/people",
