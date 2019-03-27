@@ -1,64 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react'
+import PlotView from './Components/PlotView'
+import WorkingArea from './Components/WorkingArea'
+import './App.css'
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Planet from "./Components/Planet";
-import People from "./Components/People";
-import Button from '@material-ui/core/Button';
-
-
-const routes = [
-    {
-        path: "/planet",
-        component: Planet
-    },
-    {
-        path: "/people",
-        component: People
-
-    }
-];
+const App = () => {
 
 
-function RouteWithSubRoutes(route) {
-    return (
-        <Route
-            path={route.path}
-            render={props => (
-                // pass the sub-routes down to keep nesting
-                <route.component {...props} routes={route.routes} />
-            )}
-        />
-    );
-}
+    return <div className='App'>
+        <WorkingArea/>
+        <PlotView/>
+    </div>
 
-class App extends Component {
-    render() {
-        return (
-            <div className="App">
-                <Router>
-                    <div>
-                        <Button variant="contained" color="primary">
-                            Hello World
-                        </Button>
-                        <ul>
-                            <li>
-                                <Link to="/planet">Planet</Link>
-                            </li>
-                            <li>
-                                <Link to="/people">People</Link>
-                            </li>
-                        </ul>
-
-                        {routes.map((route, i) => (
-                            <RouteWithSubRoutes key={i} {...route} />
-                        ))}
-                    </div>
-                </Router>
-            </div>
-        );
-    }
 }
 
 
-
-export default App;
+export default App
