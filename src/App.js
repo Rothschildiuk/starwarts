@@ -10,12 +10,17 @@ export const GlobalContext = React.createContext();
 const App = () => {
 
 
-    return <GlobalContext.Provider value={42}>
+    return <div>
+        <GlobalContext.Provider value={42}>
+
+        </GlobalContext.Provider>
+
+
         <div className='App'>
             <WorkingArea/>
             <PlotView/>
         </div>
-    </GlobalContext.Provider>
+    </div>
 
 
 }

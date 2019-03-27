@@ -25,8 +25,8 @@ const ListOfItems = ({url}) => {
 
         <List>
 
-            {url && entities.map(item =>
-                <ListItem button>
+            {url && entities.map((item, index) =>
+                <ListItem key={index} button>
                     <ListItemText primary={item.name} />
                 </ListItem>)
             }
