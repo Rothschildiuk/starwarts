@@ -1,11 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import MenuItem from '@material-ui/core/MenuItem'
 import Select from '@material-ui/core/Select'
-import RequestUtil from '../api/RequestUtil'
-import {getFirstFieldName} from '../api/ObjectUtil'
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText'
+import RequestUtil from '../utils/RequestUtil'
+import {getFirstFieldName} from '../utils/ObjectUtil'
 import ListOfItems from './ListOfItems'
 
 
@@ -31,9 +28,7 @@ const WorkingArea = () => {
             {Object.keys(entities).map(item => <MenuItem key={item} value={item}>{item}</MenuItem>)}
         </Select>
 
-        {/*https://swapi.co/api/people/?search=r2*/}
-
-        <ListOfItems/>
+        <ListOfItems url={entities[selectedEntity]}/>
 
     </div>
 

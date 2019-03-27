@@ -1,10 +1,10 @@
 import React from 'react'
 import PlotView from './Components/PlotView'
 import WorkingArea from './Components/WorkingArea'
-import './App.css'
+
 
 const App = () => {
-
+    // const EntityContext = React.createContext(55)
 
     return <div className='App'>
         <WorkingArea/>
