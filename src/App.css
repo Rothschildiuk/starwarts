@@ -34,6 +34,6 @@ body {
 .Plot {
     background-color: #9ab9ed;
     margin: 5px;
-    width: 200px;
-    height: 80px;
+    width: auto;
+    height: 90px;
 }
