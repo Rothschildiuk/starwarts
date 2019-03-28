@@ -12,11 +12,11 @@ const WorkingArea = () => {
     const [selectedEntity, setSelectedEntity] = useState('')
 
 
-    useEffect(() => {
-        RequestUtil.getAll().then(allEntities => {
-            setEntities(allEntities)
-            setSelectedEntity(getFirstFieldName(allEntities))
-        });
+    useEffect(async () => {
+        // const listpre = RequestUtil.getAll()
+        const list = await RequestUtil.getAll()
+        setEntities(list)
+        setSelectedEntity(getFirstFieldName(list))
     }, [])
 
     return <div className='WorkingArea'>

@@ -25,7 +25,7 @@ const ListOfItems = ({url}) => {
 
         <List>
 
-            {url && entities.map((item, index) =>
+            { entities.map((item, index) =>
                 <ListItem key={index} button>
                     <ListItemText primary={item.name} onClick={() => {
                         item.type = url.split('/')[4]
