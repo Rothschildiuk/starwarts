@@ -1,13 +1,13 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext} from 'react'
 import {GlobalContext} from '../App'
 import Plot from './Plot'
 
 
 const PlotView = () => {
-    const [plotArr, setPlotArr] = useState([])
-
 
     const {context} = useContext(GlobalContext)
+
+
     return <div className='PlotView'>
         {context.map((e, index) => {
             switch (e.type) {

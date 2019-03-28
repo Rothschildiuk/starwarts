@@ -3,10 +3,11 @@ import PlotView from './Components/PlotView'
 import WorkingArea from './Components/WorkingArea'
 
 
-export const GlobalContext = React.createContext(111);
+export const GlobalContext = React.createContext([]);
 
 
 const App = () => {
+
     const [context, setContext] = useState([])
 
     return <div className='App'>

@@ -16,14 +16,13 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: aquamarine;
+    background: #c3fff0;
     overflow-y: scroll;
 }
 
 .PlotView {
     width: 50%;
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
     overflow-y: scroll;
 }
@@ -33,7 +32,8 @@ body {
 }
 
 .Plot {
-    background-color: cornflowerblue;
+    background-color: #9ab9ed;
     margin: 5px;
-
+    width: 200px;
+    height: 80px;
 }
