@@ -1,25 +1,19 @@
-import React from 'react'
+import React, {useState} from 'react'
 import PlotView from './Components/PlotView'
 import WorkingArea from './Components/WorkingArea'
 
 
-
-export const GlobalContext = React.createContext();
+export const GlobalContext = React.createContext(111);
 
 
 const App = () => {
+    const [context, setContext] = useState([])
 
-
-    return <div>
-        <GlobalContext.Provider value={42}>
-
-        </GlobalContext.Provider>
-
-
-        <div className='App'>
+    return <div className='App'>
+        <GlobalContext.Provider value={{context: context, setContext: setContext}}>
             <WorkingArea/>
             <PlotView/>
-        </div>
+        </GlobalContext.Provider>
     </div>
 
 

@@ -11,21 +11,29 @@ body {
     display: flex;
     justify-content: space-between;
 }
-.WorkingArea{
+.WorkingArea {
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     background: aquamarine;
-
+    overflow-y: scroll;
 }
 
-.PlotView{
+.PlotView {
     width: 50%;
     display: flex;
-    flex-direction: column;
     align-items: center;
+    flex-wrap: wrap;
+    overflow-y: scroll;
 }
-.Select{
+
+.Select {
     width: 200px;
+}
+
+.Plot {
+    background-color: cornflowerblue;
+    margin: 5px;
+
 }
