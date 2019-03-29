@@ -16,18 +16,20 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #c3fff0;
+    background: #4c67ff;
     overflow-y: scroll;
 }
 
 .PlotView {
-    width: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    overflow-y: scroll;
+  background-color: #030b44;
 }
 
 .Select {
     width: 200px;
 }
+.Plot{
 
+    /*direction: */
+    justify-content: center;
+    /*alignItems: 'center',*/
+}

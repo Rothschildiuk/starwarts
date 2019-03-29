@@ -5,6 +5,8 @@ import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import RequestUtil from '../utils/RequestUtil'
 import {GlobalContext} from "../App"
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab'
 
 
 const ListOfItems = ({url}) => {
@@ -27,22 +29,25 @@ const ListOfItems = ({url}) => {
 
             {entities.map((item, index) =>
                 <ListItem key={index} button>
-                    <ListItemText primary={item.name} onClick={() => {
+                    <ListItemText primary={item.name}/>
+                    <Fab size="small" color="secondary" aria-label="Add" >
+                        <AddIcon onClick={() => {
 
-                        if (context.includes(item)) {
-                            console.log('element is in context')
-                        } else {
-                            item.type = url.split('/')[4]
+                            if (context.includes(item)) {
+                                console.log('element is in context')
+                            } else {
+                                item.type = url.split('/')[4]
 
-                            if (context.length === 0)
-                                item.id = 0
-                            else
-                                item.id = context[context.length-1].id + 1
+                                if (context.length === 0)
+                                    item.id = 0
+                                else
+                                    item.id = context[context.length - 1].id + 1
 
-                            setContext([...context, item])
-                        }
+                                setContext([...context, item])
+                            }
 
-                    }}/>
+                        }}/>
+                    </Fab>
                 </ListItem>)
             }
 

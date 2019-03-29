@@ -10,14 +10,14 @@ import Typography from '@material-ui/core/Typography'
 const Plot = ({title, description, id}) => {
     const {context, setContext} = useContext(GlobalContext)
 
-    return <Grid item xs={4}>
-
+    return <Grid item xs={4} className='Plot'>
         <Card>
-            <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
-                    {title} id = {id}
+            <CardContent >
+
+                <Typography gutterBottom variant="h5" >
+                    {title}
                 </Typography>
-                <p> description: {description}
+                <p> {description}
                     <IconButton aria-label="Delete" onClick={() => {
                         let newContecst = [];
                         context.map(e => {
