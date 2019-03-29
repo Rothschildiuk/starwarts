@@ -1,10 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react'
 
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
 import ListItemText from '@material-ui/core/ListItemText'
 import RequestUtil from '../utils/RequestUtil'
-import {GlobalContext} from "../App";
+import {GlobalContext} from "../App"
 
 
 const ListOfItems = ({url}) => {
@@ -25,7 +25,7 @@ const ListOfItems = ({url}) => {
 
         <List>
 
-            { entities.map((item, index) =>
+            {entities.map((item, index) =>
                 <ListItem key={index} button>
                     <ListItemText primary={item.name} onClick={() => {
                         item.type = url.split('/')[4]

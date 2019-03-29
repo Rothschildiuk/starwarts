@@ -4,6 +4,8 @@ import Select from '@material-ui/core/Select'
 import RequestUtil from '../utils/RequestUtil'
 import {getFirstFieldName} from '../utils/ObjectUtil'
 import ListOfItems from './ListOfItems'
+import 'typeface-roboto'
+import Typography from '@material-ui/core/Typography'
 
 
 const WorkingArea = () => {
@@ -11,16 +13,17 @@ const WorkingArea = () => {
     const [entities, setEntities] = useState({})
     const [selectedEntity, setSelectedEntity] = useState('')
 
-
-    useEffect(async () => {
-        // const listpre = RequestUtil.getAll()
-        const list = await RequestUtil.getAll()
-        setEntities(list)
-        setSelectedEntity(getFirstFieldName(list))
+    useEffect(() => {
+        RequestUtil.getAll().then(allEntities => {
+            setEntities(allEntities)
+            setSelectedEntity(getFirstFieldName(allEntities))
+        });
     }, [])
 
     return <div className='WorkingArea'>
-        <div> WorkingArea</div>
+        <Typography variant="h3" gutterBottom>
+            Select type
+        </Typography>
         <Select className='Select'
                 value={selectedEntity}
                 onChange={event => setSelectedEntity(event.target.value)}>

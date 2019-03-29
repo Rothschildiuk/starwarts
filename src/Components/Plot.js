@@ -5,6 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import Card from '@material-ui/core/Card'
 import CardContent from '@material-ui/core/CardContent'
 import Grid from '@material-ui/core/Grid'
+import Typography from '@material-ui/core/Typography'
 
 const Plot = ({title, description}) => {
     const {context, setContext} = useContext(GlobalContext)
@@ -13,14 +14,14 @@ const Plot = ({title, description}) => {
 
         <Card>
             <CardContent>
-                <p> type : {title}</p>
+                <Typography gutterBottom variant="h5" component="h2">
+                    {title}
+                </Typography>
                 <p> description: {description}
                     <IconButton aria-label="Delete" onClick={() => {
                         let newContecst = [];
                         context.map(e => {
-                            if (e.name !== description)
-                                newContecst.push(e)
-
+                            if (e.name !== description) newContecst.push(e)
                         })
 
                         setContext([...newContecst])
