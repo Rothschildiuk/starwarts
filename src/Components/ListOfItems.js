@@ -33,7 +33,12 @@ const ListOfItems = ({url}) => {
                             console.log('element is in context')
                         } else {
                             item.type = url.split('/')[4]
-                            item.id = context.length
+
+                            if (context.length === 0)
+                                item.id = 0
+                            else
+                                item.id = context[context.length-1].id + 1
+
                             setContext([...context, item])
                         }
 
