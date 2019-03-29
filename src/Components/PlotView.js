@@ -9,7 +9,7 @@ const PlotView = () => {
     const {context} = useContext(GlobalContext)
 
 
-    return <Grid container spacing={16}
+    return <Grid container
                  direction='row'
                  justify='center'
                  alignItems='center'

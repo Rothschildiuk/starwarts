@@ -13,6 +13,7 @@ body {
 }
 .WorkingArea {
     width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,8 +29,19 @@ body {
     width: 200px;
 }
 .Plot{
-
-    /*direction: */
     justify-content: center;
-    /*alignItems: 'center',*/
+
+}
+.Card{
+    margin: 8px;
+
+}
+/**/
+
+.CardActions{
+    flex-direction: row-reverse;;
+}
+.CardContent{
+    background: #4c67ff;
+
 }
