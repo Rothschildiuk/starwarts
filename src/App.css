@@ -11,6 +11,7 @@ body {
     display: flex;
     justify-content: space-between;
 }
+
 .WorkingArea {
     width: 50%;
     height: 100%;
@@ -22,26 +23,32 @@ body {
 }
 
 .PlotView {
-  background-color: #030b44;
+    background-color: #030b44;
+    overflow-y: scroll;
+
 }
 
 .Select {
     width: 200px;
 }
-.Plot{
+
+.Plot {
     justify-content: center;
 
 }
-.Card{
+
+.Card {
     margin: 8px;
 
 }
+
 /**/
 
-.CardActions{
+.CardActions {
     flex-direction: row-reverse;;
 }
-.CardContent{
+
+.CardContent {
     background: #4c67ff;
 
 }
