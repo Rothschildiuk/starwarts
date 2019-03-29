@@ -14,17 +14,17 @@ const PlotView = () => {
             {context.map((e, index) => {
                 switch (e.type) {
                     case 'people':
-                        return <Plot key={index} title={e.type} description={e.name}/>
+                        return <Plot key={index} title={e.type} description={e.name} id={e.id}/>
                     case 'planets':
-                        return <Plot key={index} title={e.type} description={e.name}/>
+                        return <Plot key={index} title={e.type} description={e.name} id={e.id}/>
                     case 'films':
-                        return <Plot key={index} title={e.type} description={e.name}/>
+                        return <Plot key={index} title={e.type} description={e.name} id={e.id}/>
                     case 'species':
-                        return <Plot key={index} title={e.type} description={e.name}/>
+                        return <Plot key={index} title={e.type} description={e.name} id={e.id}/>
                     case 'vehicles':
-                        return <Plot key={index} title={e.type} description={e.name}/>
+                        return <Plot key={index} title={e.type} description={e.name} id={e.id}/>
                     case 'starships':
-                        return <Plot key={index} title={e.type} description={e.name}/>
+                        return <Plot key={index} title={e.type} description={e.name} id={e.id}/>
                     default:
                         return <Plot key={index} title={'Undefined type'} description={'undefined description'}/>
                 }

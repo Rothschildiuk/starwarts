@@ -28,8 +28,15 @@ const ListOfItems = ({url}) => {
             {entities.map((item, index) =>
                 <ListItem key={index} button>
                     <ListItemText primary={item.name} onClick={() => {
-                        item.type = url.split('/')[4]
-                        setContext([...context, item])
+
+                        if (context.includes(item)) {
+                            console.log('element is in context')
+                        } else {
+                            item.type = url.split('/')[4]
+                            item.id = context.length
+                            setContext([...context, item])
+                        }
+
                     }}/>
                 </ListItem>)
             }

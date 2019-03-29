@@ -7,7 +7,7 @@ import CardContent from '@material-ui/core/CardContent'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 
-const Plot = ({title, description}) => {
+const Plot = ({title, description, id}) => {
     const {context, setContext} = useContext(GlobalContext)
 
     return <Grid item xs={4}>
@@ -15,15 +15,14 @@ const Plot = ({title, description}) => {
         <Card>
             <CardContent>
                 <Typography gutterBottom variant="h5" component="h2">
-                    {title}
+                    {title} id = {id}
                 </Typography>
                 <p> description: {description}
                     <IconButton aria-label="Delete" onClick={() => {
                         let newContecst = [];
                         context.map(e => {
-                            if (e.name !== description) newContecst.push(e)
+                            if (e.id !== id) newContecst.push(e)
                         })
-
                         setContext([...newContecst])
                     }}>
                         <DeleteIcon fontSize="small"/>
