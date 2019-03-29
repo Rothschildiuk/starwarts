@@ -29,10 +29,9 @@ const ListOfItems = ({url}) => {
 
             {entities.map((item, index) =>
                 <ListItem key={index} button>
-                    <ListItemText primary={item.name}/>
-                    <Fab size="small" color="secondary" aria-label="Add" >
+                    <ListItemText primary={item.name || item.title}/>
+                    <Fab size="small" color="secondary" aria-label="Add">
                         <AddIcon onClick={() => {
-
                             if (context.includes(item)) {
                                 console.log('element is in context')
                             } else {
@@ -45,7 +44,6 @@ const ListOfItems = ({url}) => {
 
                                 setContext([...context, item])
                             }
-
                         }}/>
                     </Fab>
                 </ListItem>)

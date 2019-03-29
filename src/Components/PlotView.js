@@ -23,7 +23,7 @@ const PlotView = () => {
                 case 'planets':
                     return <Plot key={index} title={'Planets'} description={e.name} id={e.id}/>
                 case 'films':
-                    return <Plot key={index} title={'Films'} description={e.name} id={e.id}/>
+                    return <Plot key={index} title={'Films'} description={e.title} id={e.id}/>
                 case 'species':
                     return <Plot key={index} title={'Species'} description={e.name} id={e.id}/>
                 case 'vehicles':
