@@ -23,7 +23,7 @@ const Plot = ({title, description, id}) => {
                 <CardActions className='CardActions'>
                     <IconButton aria-label="Delete" className='DeleteIcon' onClick={() => {
                         let newContecst = [];
-                        context.map(e => {
+                        context.forEach(e => {
                             if (e.id !== id) newContecst.push(e)
                         })
                         setContext([...newContecst])

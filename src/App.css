@@ -13,7 +13,7 @@ body {
 }
 
 .WorkingArea {
-    width: 50%;
+    width: 25%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -23,6 +23,7 @@ body {
 }
 
 .PlotView {
+    width: 75%;
     background-color: #030b44;
     overflow-y: scroll;
 
@@ -34,6 +35,7 @@ body {
 
 .Plot {
     justify-content: center;
+    max-width: 50px;
 
 }
 
@@ -50,5 +52,4 @@ body {
 
 .CardContent {
     background: #4c67ff;
-
 }
