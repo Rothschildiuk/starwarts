@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useState} from 'react'
+import React, {useContext, useEffect, useState, usePrevious} from 'react'
 
 import List from '@material-ui/core/List'
 import ListItem from '@material-ui/core/ListItem'
@@ -12,16 +12,21 @@ import TablePagination from '@material-ui/core/TablePagination';
 
 const ListOfItems = ({url}) => {
     const [entities, setEntities] = useState([])
-    const [count, setCount] = useState(0)
-    const [next, setNext] = useState()
-    const [page, setPage] = useState(0)
-    const [previous, setPrevious] = useState()
+    const [count, setCount] = useState(0)               //page anzahl
+    const [next, setNext] = useState()                  //link to next page
+    const [page, setPage] = useState(0)                 //link to current page integer
+    const [previous, setPrevious] = useState()          //link to previous page
     const {context, setContext} = useContext(GlobalContext)
 
     useEffect(() => {
         if (url) {
+
+            // todo proof 404 if true -> setPage(0)
             RequestUtil.request(`${url}?page=${page + 1}`)
-                .then(resp => {
+                .then( resp => {
+                    if (resp.length === 0) console.log('super')
+                    if (count !== resp.count)setPage(0)
+
                     setEntities(resp.results)
                     setCount(resp.count)
                     setNext(resp.next)
@@ -72,8 +77,11 @@ const ListOfItems = ({url}) => {
                 nextIconButtonProps={{
                     'aria-label': {next}
                 }}
-                onChangePage={(e, page) => setPage(page)}
-                // onChangeRowsPerPage={this.handleChangeRowsPerPage}
+                onChangePage={(e, page) => {
+
+                    setPage(page)
+                    console.log(page)
+                }}
             />
         </div>}
     </div>
