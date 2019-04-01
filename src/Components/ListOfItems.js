@@ -20,18 +20,21 @@ const ListOfItems = ({url}) => {
 
     useEffect(() => {
         if (url) {
-
             // todo proof 404 if true -> setPage(0)
             RequestUtil.request(`${url}?page=${page + 1}`)
-                .then( resp => {
-                    if (resp.length === 0) console.log('super')
-                    if (count !== resp.count)setPage(0)
-
+                .then(resp => {
+                    if (!resp.results){
+                        setPage(0)
+                        return
+                    }
+                    if (count !== resp.count) setPage(0)
                     setEntities(resp.results)
                     setCount(resp.count)
                     setNext(resp.next)
                     setPrevious(resp.previous)
                 })
+
+
         }
     }, [url, page])
 
@@ -80,7 +83,6 @@ const ListOfItems = ({url}) => {
                 onChangePage={(e, page) => {
 
                     setPage(page)
-                    console.log(page)
                 }}
             />
         </div>}
